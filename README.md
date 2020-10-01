@@ -4,7 +4,7 @@ Open-Source **Flask Dashboard** coded with basic modules, database, ORM and depl
 
 <br />
 
-> Features:
+> Features
 
 - DBMS: SQLite, PostgreSQL (production) 
 - DB Tools: SQLAlchemy ORM, Alembic (schema migrations)
