@@ -28,7 +28,7 @@
                                     {% if msg %}
                                         {{ msg | safe }}
                                     {% else %}
-                                        Use default credentials: test / pass
+                                        Add your credentials
                                     {% endif %}                                     
                                 </p>    
                             </div>
@@ -42,7 +42,7 @@
                                     <label for="email">Username</label>
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon1"><span class="fas fa-user-circle"></span></span>
-                                        <input class="form-control" placeholder="Username" type="text" name="username" value="test">
+                                        {{ form.username(placeholder="Username", class="form-control") }}
                                     </div>  
                                 </div>
                                 <!-- End of Form -->
@@ -52,7 +52,7 @@
                                         <label for="password">Your Password</label>
                                         <div class="input-group">
                                             <span class="input-group-text" id="basic-addon2"><span class="fas fa-unlock-alt"></span></span>
-                                            <input class="form-control" placeholder="Password" type="password" name="password" value="pass">
+                                            {{ form.password(placeholder="Password", class="form-control", type="password") }}
                                         </div>  
                                     </div>
                                     <!-- End of Form -->
