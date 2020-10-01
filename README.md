@@ -21,12 +21,6 @@ Open-Source **Flask Dashboard** coded with basic modules, database, ORM and depl
 
 <br />
 
-> Volt Dashboard
-
-Volt is a free and open source Bootstrap 5 Admin Dashboard featuring over 100 components, 11 example pages and 3 plugins with Vanilla JS.
-
-<br />
-
 ## Want more? Go PRO!
 
 PRO versions include **Premium UI Kits**, Lifetime updates and **24/7 LIVE Support** (via [Discord](https://discord.gg/fZC6hup))
