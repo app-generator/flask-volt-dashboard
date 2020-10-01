@@ -1,6 +1,8 @@
 # [Flask Dashboard Volt](https://appseed.us/admin-dashboards/flask-dashboard-volt)
 
-> Open-Source admin dashboard coded in Flask with basic modules, database, ORM and deployment scripts on top of Volt Dashboard (free version) - Features:
+Open-Source **Flask Dashboard** coded with basic modules, database, ORM and deployment scripts on top of Volt (free version), a modern Bootstrap dashboard design. Volt is a free and open source Bootstrap 5 Admin Dashboard featuring over 100 components, 11 example pages and 3 customized plugins. Volt does not require jQuery as a dependency meaning that every library and script's are jQuery free.
+
+> Features:
 
 - DBMS: SQLite, PostgreSQL (production) 
 - DB Tools: SQLAlchemy ORM, Alembic (schema migrations)
@@ -14,7 +16,6 @@
 - [Flask Dashboard Volt](https://appseed.us/admin-dashboards/flask-dashboard-volt) - product page
 - [Flask Dashboard Volt - Demo](https://flask-dashboard-volt.appseed.us/) - LIVE deployment
 - [Flask Dashboard Volt- Sources](https://github.com/app-generator/flask-dashboard-volt) - product source code (Github)
-
 
 <br />
 
