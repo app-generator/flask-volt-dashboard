@@ -1,10 +1,10 @@
-# [Flask Dashboard Volt](https://appseed.us/admin-dashboards/flask-dashboard-volt)
+# [Flask Dashboard](http://appseed.us/admin-dashboards/flask) - Volt Bootstrap 5
 
-Open-Source **Flask Dashboard** coded with basic modules, database, ORM and deployment scripts on top of Volt (free version), a modern Bootstrap dashboard design. Volt is a free and open source Bootstrap 5 Admin Dashboard featuring over 100 components, 11 example pages and 3 customized plugins. **Volt does not require jQuery** as a dependency meaning that every library and script's are jQuery free.
+Open-Source **Flask Dashboard** coded with basic modules, database, ORM and deployment scripts on top of **[Volt Dashboard](https://docs.appseed.us/bootstrap-template/volt-dashboard/)** (free version), a modern Bootstrap dashboard design. Volt is a free and open source Bootstrap 5 Admin Dashboard featuring over 100 components, 11 example pages and 3 customized plugins. **Volt does not require jQuery** as a dependency meaning that every library and script's are jQuery free.
 
 <br />
 
-> Features
+> Flask Dashboard Features
 
 - DBMS: SQLite, PostgreSQL (production) 
 - DB Tools: SQLAlchemy ORM, Alembic (schema migrations)
@@ -13,10 +13,26 @@ Open-Source **Flask Dashboard** coded with basic modules, database, ORM and depl
 - Deployment scripts: Docker, Gunicorn / Nginx, Heroku
 - Support via **Github** (issues tracker) and [Discord](https://discord.gg/fZC6hup).
 
+<br />
+
 > Links
 
 - [Flask Dashboard Volt](https://appseed.us/admin-dashboards/flask-dashboard-volt) - product page
 - [Flask Dashboard Volt - Demo](https://flask-dashboard-volt.appseed.us/) - LIVE deployment
+- [Flask Dashboard Volt - Docs](https://docs.appseed.us/admin-dashboards/flask-dashboard-volt/) - Product documentation
+
+<br />
+
+## UI Kit - **[Volt Dashboard](https://docs.appseed.us/bootstrap-template/volt-dashboard/)**
+
+Volt is a free and open source **Bootstrap 5** powered admin dashboard with components, pages and plugins that you can use to create an awesome admin interfaces. It also comes with a pro version with more pages, plugins and components.
+
+**100+ Components, 11 Sample pages** - There are more than 100 free Bootstrap 5 components included some of them being buttons, alerts, modals, datepickers, all nicely documented via the official components docs. Volt brings 11 example pages including an overview, sign in, sign up, transactions page and many more.
+
+**Tooling** - Sass files and a Gulp commands file that will let you build minified and un-minified project files with the ability to even add certain blocks of code based on your environment.
+
+- [Product Page](https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard) - hosted by [Themesberg](https://appseed.us/agency/themesberg)
+- [Product Docs - Quick Start](https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/) - official product documentation
 
 <br />
 
