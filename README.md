@@ -20,6 +20,7 @@ Open-Source **Flask Dashboard** coded with basic modules, database, ORM and depl
 - [Flask Dashboard Volt](https://appseed.us/admin-dashboards/flask-dashboard-volt) - product page
 - [Flask Dashboard Volt - Demo](https://flask-dashboard-volt.appseed.us/) - LIVE deployment
 - [Flask Dashboard Volt - Docs](https://docs.appseed.us/admin-dashboards/flask-dashboard-volt/) - Product documentation
+- **[Flask Dashboard Volt PRO](https://appseed.us/admin-dashboards/flask-dashboard-volt-pro?ref=dev)** - Premium version
 
 <br />
 
