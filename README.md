@@ -20,7 +20,7 @@ Volt Dashboard is a free and open source Bootstrap 5 Admin Dashboard featuring o
 > Links
 
 - [Flask Dashboard Volt](https://appseed.us/admin-dashboards/flask-dashboard-volt) - product page
-- [Flask Dashboard Volt - Demo](https://flask-dashboard-volt.appseed.us/) - LIVE deployment
+- [Flask Dashboard Volt - Demo](https://flask-volt-dashboard.appseed-srv1.com/) - LIVE deployment
 - [Flask Tutorial](https://github.com/app-generator/tutorial-flask) - Getting started with Flask
 
 <br />
