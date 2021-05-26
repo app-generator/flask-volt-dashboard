@@ -1,5 +1,13 @@
 # Change Log
 
+## Unreleased 2021-05-26
+### Tooling
+
+- Added scripts to recompile the SCSS files
+    - `app/base/static/assets/` - gulpfile.js
+    - `app/base/static/assets/` - package.json
+- `Update README` - [Recompile SCSS](https://github.com/app-generator/flask-dashboard-volt#recompile-css) (new section)
+
 ## [1.0.3] 2021-05-16
 ### Dependencies Update
 
