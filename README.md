@@ -199,16 +199,18 @@ The *Home* blueprint handles UI Kit pages for authenticated users. This is the p
 
 To recompile SCSS files, follow this setup:
 
-**Install tools**
+<br />
+
+**Step #1** - Install tools
 
 - [NodeJS](https://nodejs.org/en/) 12.x or higher
-- Gulp - globally 
+- [Gulp](https://gulpjs.com/) - globally 
     - `npm install -g gulp-cli`
 - [Yarn](https://yarnpkg.com/) (optional) 
 
 <br />
 
-**Change the working directory** to `assets` folder
+**Step #2** - Change the working directory to `assets` folder
 
 ```bash
 $ cd app/base/static/assets
@@ -216,7 +218,7 @@ $ cd app/base/static/assets
 
 <br />
 
-**Install modules** - this will create a classic `node_modules` directory
+**Step #3** - Install modules (this will create a classic `node_modules` directory)
 
 ```bash
 $ npm install
@@ -226,7 +228,7 @@ $ yarn
 
 <br />
 
-**Edit & Recompile SCSS** 
+**Step #4** - Edit & Recompile SCSS files 
 
 ```bash
 $ gulp scss
