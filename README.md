@@ -197,7 +197,7 @@ The *Home* blueprint handles UI Kit pages for authenticated users. This is the p
 
 ## Recompile CSS
 
-To recompile the CSS from SCSS file follow this setup:
+To recompile SCSS files, follow this setup:
 
 **Install tools**
 
