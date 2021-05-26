@@ -195,6 +195,47 @@ The *Home* blueprint handles UI Kit pages for authenticated users. This is the p
 
 <br />
 
+## Recompile CSS
+
+To recompile the CSS from SCSS file follow this setup:
+
+**Install tools**
+
+- [NodeJS](https://nodejs.org/en/) 12.x or higher
+- Gulp - globally 
+    - `npm install -g gulp-cli`
+- [Yarn](https://yarnpkg.com/) (optional) 
+
+<br />
+
+**Change the working directory** to `assets` folder
+
+```bash
+$ cd app/base/static/assets
+```
+
+<br />
+
+**Install modules** - this will create a classic `node_modules` directory
+
+```bash
+$ npm install
+// OR
+$ yarn
+```
+
+<br />
+
+**Edit & Recompile SCSS** 
+
+```bash
+$ gulp scss
+```
+
+The generated file is saved in `static/assets/css` directory.
+
+<br />
+
 ## Deployment
 
 The app is provided with a basic configuration to be executed in [Docker](https://www.docker.com/), [Heroku](https://www.heroku.com/), [Gunicorn](https://gunicorn.org/), and [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/).
