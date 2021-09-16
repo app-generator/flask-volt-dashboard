@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.0.5] 2021-09-07
+## [1.0.5] 2021-09-16
 ### Improvements & Fixes
 
 - Bump Flask Codebase to [v2.0.0](https://github.com/app-generator/boilerplate-code-flask-dashboard/releases)
