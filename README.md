@@ -52,8 +52,8 @@ Visit `http://localhost:85` in your browser. The app should be up & running.
 
 ```bash
 $ # Get the code
-$ git clone https://github.com/app-generator/flask-dashboard-volt.git
-$ cd flask-dashboard-volt
+$ git clone https://github.com/app-generator/flask-volt-dashboard.git
+$ cd flask-volt-dashboard
 $
 $ # Virtualenv modules installation (Unix based systems)
 $ virtualenv env
@@ -211,8 +211,8 @@ Steps to deploy on **Heroku**
 
 ```bash
 $ # Clone the source code:
-$ git clone https://github.com/app-generator/flask-dashboard-volt.git
-$ cd flask-dashboard-volt
+$ git clone https://github.com/app-generator/flask-volt-dashboard.git
+$ cd flask-volt-dashboard
 $
 $ # Check Heroku CLI is installed
 $ heroku -v
