@@ -6,7 +6,7 @@
 
 > Features
 
-- `Up-to-date dependencies`: **Flask 2.0.1**
+- `Up-to-date dependencies`
 - [SCSS compilation](#recompile-css) via **Gulp**
 - `DBMS`: SQLite, PostgreSQL (production) 
 - `DB Tools`: SQLAlchemy ORM, Flask-Migrate (schema migrations)
@@ -98,23 +98,23 @@ The project is coded using blueprints, app factory pattern, dual configuration p
    |
    |-- apps/
    |    |
-   |    |-- home/                          # A simple app that serve HTML files
-   |    |    |-- routes.py                 # Define app routes
+   |    |-- home/                           # A simple app that serve HTML files
+   |    |    |-- routes.py                  # Define app routes
    |    |
-   |    |-- authentication/                # Handles auth routes (login and register)
-   |    |    |-- routes.py                 # Define authentication routes  
-   |    |    |-- models.py                 # Defines models  
-   |    |    |-- forms.py                  # Define auth forms (login and register) 
+   |    |-- authentication/                 # Handles auth routes (login and register)
+   |    |    |-- routes.py                  # Define authentication routes  
+   |    |    |-- models.py                  # Defines models  
+   |    |    |-- forms.py                   # Define auth forms (login and register) 
    |    |
    |    |-- static/
-   |    |    |-- <css, JS, images>         # CSS files, Javascripts files
+   |    |    |-- <css, JS, images>          # CSS files, Javascripts files
    |    |
-   |    |-- templates/                     # Templates used to render pages
-   |    |    |-- includes/                 # HTML chunks and components
-   |    |    |    |-- navigation.html      # Top menu component
-   |    |    |    |-- sidebar.html         # Sidebar component
-   |    |    |    |-- footer.html          # App Footer
-   |    |    |    |-- scripts.html         # Scripts common to all pages
+   |    |-- templates/                      # Templates used to render pages
+   |    |    |-- includes/                  # HTML chunks and components
+   |    |    |    |-- navigation.html       # Top menu component
+   |    |    |    |-- sidebar.html          # Sidebar component
+   |    |    |    |-- footer.html           # App Footer
+   |    |    |    |-- scripts.html          # Scripts common to all pages
    |    |    |
    |    |    |-- layouts/                   # Master pages
    |    |    |    |-- base-fullscreen.html  # Used by Authentication pages
