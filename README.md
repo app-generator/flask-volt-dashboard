@@ -18,7 +18,7 @@
 
 > Links
 
-- 👉 [https://appseed.us/product/volt-dashboard/flask/](https://appseed.us/admin-dashboards/flask-dashboard-volt) - product page
+- 👉 [Flask Bootstrap 5 Volt](https://appseed.us/product/volt-dashboard/flask/) - product page
 - 👉 [Flask Bootstrap 5 Volt](https://flask-volt-dashboard.appseed-srv1.com/) - LIVE deployment
 
 <br />
