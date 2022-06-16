@@ -12,15 +12,16 @@ from flask_login import (
 
 from apps import db, login_manager
 from apps.authentication import blueprint
-from apps.authentication.forms import LoginForm, CreateAccountForm
+from apps.authentication.forms import LoginForm, CreateAccountForm, TranslateForm
 from apps.authentication.models import Users
 
 from apps.authentication.util import verify_pass
 
 
-@blueprint.route('/')
+@blueprint.route('/', methods=['GET', 'POST'])
 def route_default():
-    return redirect(url_for('authentication_blueprint.login'))
+    return render_template('home/translate.html')
+    #return redirect(url_for('authentication_blueprint.login'))
 
 
 # Login & Registration

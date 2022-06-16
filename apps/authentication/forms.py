@@ -29,3 +29,11 @@ class CreateAccountForm(FlaskForm):
     password = PasswordField('Password',
                              id='pwd_create',
                              validators=[DataRequired()])
+
+class TranslateForm(FlaskForm):
+    text2translate = StringField('Text2Translate',
+                         id='t2t',
+                         validators=[DataRequired()])
+    translatedtext = StringField('TranslatedText',
+                             id='tt',
+                             validators=[DataRequired()])
