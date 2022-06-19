@@ -12,16 +12,81 @@ from flask_login import (
 
 from apps import db, login_manager
 from apps.authentication import blueprint
-from apps.authentication.forms import LoginForm, CreateAccountForm, TranslateForm
+from apps.authentication.forms import LoginForm, CreateAccountForm
 from apps.authentication.models import Users
 
 from apps.authentication.util import verify_pass
 
+from translate import Translator
+from apps.translate.models import Reviews
+from datetime import datetime
 
 @blueprint.route('/', methods=['GET', 'POST'])
 def route_default():
+
+  if request.method == 'GET':
     return render_template('home/translate.html')
-    #return redirect(url_for('authentication_blueprint.login'))
+
+  else:
+
+    # read the posted values from the UI
+    _sl = request.form['slang']
+    _tl = request.form['tlang']
+    _t2t = request.form['t2t']
+    _tt = request.form['tt']
+
+    languages = {"1" : "ha", "2" : "en", "3" : "fr"}
+    lcode = {"1" : "Aukaans (Ndyuka)", "2" : "English", "3" : "French"}
+    msg = 'Translation successful'
+    translation = ''
+    
+    if _sl == '':
+      msg = 'Select the source language'
+    elif _tl == '':
+      msg = 'Select the target language'
+    elif _t2t == '':
+      msg = 'Provide the text to translate'
+    elif _sl == _tl:
+      msg = 'Please select different source and target languages'
+    elif (_sl == '2' or _sl == '3') and (_tl == '2' or _tl == '3'):
+      msg = 'You can only translate to/from Ndyuka (Aukaans)'
+
+    if 'translate' in request.form:
+      if msg == 'Translation successful':
+        translation = Translator(to_lang = languages.get(_tl), from_lang = languages.get(_sl)).translate(_t2t)
+        _tt = translation
+      else:
+        _tt = ''
+
+      return render_template('home/translate.html',
+        t2t = _t2t,
+        sl = _sl,
+        tl = _tl,
+        msg = msg,
+        translation = _tt)
+
+    elif 'review' in request.form:
+      if msg == 'Translation successful':
+        translation = Translator(to_lang = languages.get(_tl), from_lang = languages.get(_sl)).translate(_t2t)
+
+        if _tt == translation:
+          msg = 'Please review translation before saving'
+        else:
+          record = Reviews(lcode.get(_sl), lcode.get(_tl), _t2t, translation, _tt, datetime.now())
+          db.session.add(record)
+          db.session.commit()
+
+          msg = 'Review successful'
+
+      else:
+        msg = 'Generate a translation first'
+
+      return render_template('home/translate.html',
+        t2t = _t2t,
+        sl = _sl,
+        tl = _tl,
+        msg = msg,
+        translation = _tt)
 
 
 # Login & Registration
@@ -55,7 +120,7 @@ def login():
     return redirect(url_for('home_blueprint.index'))
 
 
-@blueprint.route('/register', methods=['GET', 'POST'])
+@blueprint.route('/register_new_user_admin', methods=['GET', 'POST'])
 def register():
     create_account_form = CreateAccountForm(request.form)
     if 'register' in request.form:

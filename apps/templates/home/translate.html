@@ -84,16 +84,14 @@
                           <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
                           Dashboard
                         </a>
-                        <a class="dropdown-item d-flex align-items-center" href="/settings.html">
-                          <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
-                          Settings
-                        </a>
-                        <div role="separator" class="dropdown-divider my-1"></div>
-                        <a class="dropdown-item d-flex align-items-center" href="{{ url_for('authentication_blueprint.logout') }}">
-                          <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>                
-                          Logout
-                        </a>
-                      </div>
+                        {% if current_user %}
+                            <div role="separator" class="dropdown-divider my-1"></div>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ url_for('authentication_blueprint.logout') }}">
+                                  <svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>                
+                                  Logout
+                                </a>
+                            </div>
+                        {% endif %}
                     </li>
                   </ul>
                 </div>
@@ -121,60 +119,58 @@
         </section>
 
         <!-- Hero -->
-        <section class="section-header overflow-hidden bg-primary text-white">
+        <section class="overflow-hidden bg-primary text-white pt-4">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="card border-0 shadow components-section">
-                            <div class="card-body">     
-                                <div class="row">
-                                    <form method="post" action="" class="mt-4">
+                            <div class="card-body">
+                                    <form method="post" action="">
 
-                                        {{ form.hidden_tag() }}
-                                        
-                                        <div class="col-lg-6 col-sm-6 mb-4">
+                                        <div class="text-center text-md-center mb-0 mt-md-0 text-gray-800">
+                                            <p>
+                                                {% if msg %}
+                                                    {{ msg | safe }}
+                                                {% endif %}                                     
+                                            </p> 
+                                        </div>
+
+                                        <div class="col-lg-12 col-sm-12 mb-4">
                                         <!-- Form -->
                                             <div class="col-lg-6 mb-2">
                                                 <label class="my-1 me-2" for="sl"><span class="ms-1 mb-0 fs-6 text-gray-800">Source Language</span></label>
-                                                <select class="form-select" id="sl" aria-label="Default select example">
-                                                    <option selected>Select Source Language</option>
-                                                    <option value="1">Ndyuka (Aukaans)</option>
-                                                    <option value="2">English</option>
-                                                    <option value="3">French</option>
+                                                <select class="form-select" id="slang" name="slang" aria-label="Default select example">
+                                                    <option value="" {% if sl=="" %} selected {% endif %}>Select Source Language</option>
+                                                    <option value="1" {% if sl=="1" %} selected {% endif %}>Ndyuka (Aukaans)</option>
+                                                    <option value="2" {% if sl=="2" %} selected {% endif %}>English</option>
+                                                    <option value="3" {% if sl=="3" %} selected {% endif %}>French</option>
+                                                </select>
+                                                <label class="my-1 me-2" for="tlang"><span class="ms-1 mb-0 fs-6 text-gray-800">Target Language</span></label>
+                                                <select class="form-select" title="tlang" id="tlang" name="tlang" aria-label="Default select example">
+                                                    <option value="" {% if tl=="" %} selected {% endif %}>Select Target Language</option>
+                                                    <option value="1" {% if tl=="1" %} selected {% endif %}>Ndyuka (Aukaans)</option>
+                                                    <option value="2" {% if tl=="2" %} selected {% endif %}>English</option>
+                                                    <option value="3" {% if tl=="3" %} selected {% endif %}>French</option>
                                                 </select>
                                             </div>
                                             <div class="my-0">
                                                 <label for="t2t"><span class="ms-1 mb-0 fs-6 text-gray-800">Text to Translate</span></label>
-                                                <textarea class="form-control" placeholder="Enter your text..." id="t2t" rows="4"></textarea>
-                                                <button type="submit" name="translate" class="btn btn-primary d-inline-flex align-items-center">
+                                                <textarea class="form-control" placeholder="Enter your text..." id="t2t" name="t2t" rows="4">{{ t2t }}</textarea>
+                                                <button type="submit" name="translate" value="translate" class="btn btn-primary d-inline-flex align-items-center">
                                                     <svg class="icon icon-xxs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                                                     Translate
                                                 </button>
                                             </div>
+                                            <div class="my-0">
+                                                <label for="tt"><span class="ms-1 mb-0 fs-6 text-gray-800">Translation</span></label>
+                                                <textarea class="form-control" placeholder="Translated text..." id="tt" name="tt" rows="4">{{ translation }}</textarea>
+                                                <button type="submit" name="review" value="review" class="btn btn-primary d-inline-flex align-items-center">
+                                                    <svg class="icon icon-xxs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
+                                                    Review
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="col-lg-6 col-sm-6">
-
-                                        <!-- Form -->
-                                        <div class="col-lg-6 mb-2">
-                                            <label class="my-1 me-2" for="country"><span class="ms-1 mb-0 fs-6 text-gray-800">Target Language</span></label>
-                                            <select class="form-select" id="country" aria-label="Default select example">
-                                                <option selected>Select Source Language</option>
-                                                <option value="1">Ndyuka (Aukaans)</option>
-                                                <option value="2">English</option>
-                                                <option value="3">French</option>
-                                            </select>
-                                        </div>
-                                        <div class="my-0">
-                                            <label for="tt"><span class="ms-1 mb-0 fs-6 text-gray-800">Translation</span></label>
-                                            <textarea class="form-control" placeholder="Enter your text..." id="tt" rows="4"></textarea>
-                                            <button type="submit" name="review" class="btn btn-primary d-inline-flex align-items-center">
-                                                <svg class="icon icon-xxs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"></path><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"></polygon></svg>
-                                                Review
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                                </div>
+                                    </form>
                             </div>
                         </div>
                     </div>

@@ -4,16 +4,21 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from apps.home import blueprint
-from flask import render_template, request
+from flask import render_template, request, redirect
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 
+from apps.translate.models import Reviews
 
 @blueprint.route('/index')
-@login_required
 def index():
 
-    return render_template('home/index.html', segment='index')
+    return redirect('/')
+
+@blueprint.route('/translate')
+def translate():
+
+    return redirect('/')
 
 
 @blueprint.route('/<template>')
@@ -27,6 +32,10 @@ def route_template(template):
 
         # Detect the current page
         segment = get_segment(request)
+
+        if template == 'dashboard.html':
+            reviews = Reviews.query.all()
+            return render_template("home/" + template, segment=segment, reviews=reviews)
 
         # Serve the file (if exists) from app/templates/home/FILE.html
         return render_template("home/" + template, segment=segment)
