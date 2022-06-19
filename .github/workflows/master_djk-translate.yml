@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'djk-translate'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8649B101821E478988D69EC75A65E730 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6C6D763DD7E448529FFA17D071C3FE8A }}
