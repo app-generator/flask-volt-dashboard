@@ -9,7 +9,10 @@ email_validator==1.1.3
 gunicorn==20.1.0
 jinja2==3.0.3
 flask-restx==0.5.1
+flask-paginate
 Werkzeug==2.0.3
 python-dotenv==0.19.2
-pydrive
 mysqlclient
+transformers
+torch
+sentencepiece

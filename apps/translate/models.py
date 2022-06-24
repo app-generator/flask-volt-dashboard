@@ -10,12 +10,14 @@ class Reviews(db.Model):
     text = db.Column(db.String)
     translation = db.Column(db.String)
     reviewed = db.Column(db.String)
+    comment = db.Column(db.String)
     reviewed_at = db.Column(db.DateTime)
 
-    def __init__(self, sl, tl, text, translation, reviewed, reviewed_at):
+    def __init__(self, sl, tl, text, translation, reviewed, comment, reviewed_at):
         self.sl = sl
         self.tl = tl
         self.text = text
         self.translation = translation
         self.reviewed = reviewed
+        self.comment = comment
         self.reviewed_at = reviewed_at

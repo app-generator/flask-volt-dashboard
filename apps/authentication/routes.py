@@ -1,8 +1,3 @@
-# -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
-
 from flask import render_template, redirect, request, url_for
 from flask_login import (
     current_user,
@@ -20,7 +15,24 @@ from apps.authentication.util import verify_pass
 from translate import Translator
 from apps.translate.models import Reviews
 from datetime import datetime
+#from transformers import M2M100ForConditionalGeneration, M2M100Tokenizer
 
+import os
+
+#def translate_text(sl, tl, t2t, model_path):
+
+#  model = M2M100ForConditionalGeneration.from_pretrained(model_path)
+#  tokenizer = M2M100Tokenizer.from_pretrained(model_path)
+
+  # translate Hindi to French
+#  tokenizer.src_lang = sl
+#  encoded_sl = tokenizer(t2t, return_tensors="pt")
+#  generated_tokens = model.generate(**encoded_sl, forced_bos_token_id=tokenizer.get_lang_id(tl))
+  
+#  return tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
+
+@blueprint.route('/translate', methods=['GET', 'POST'])
+@blueprint.route('/index', methods=['GET', 'POST'])
 @blueprint.route('/', methods=['GET', 'POST'])
 def route_default():
 
@@ -35,8 +47,7 @@ def route_default():
     _t2t = request.form['t2t']
     _tt = request.form['tt']
 
-    languages = {"1" : "ha", "2" : "en", "3" : "fr"}
-    lcode = {"1" : "Aukaans (Ndyuka)", "2" : "English", "3" : "French"}
+    lcode = {"1" : ['es', 'Ndyuka (Aukaans)'], "2" : ['en', 'English'], "3" : ['fr', 'French']}
     msg = 'Translation successful'
     translation = ''
     
@@ -48,12 +59,14 @@ def route_default():
       msg = 'Provide the text to translate'
     elif _sl == _tl:
       msg = 'Please select different source and target languages'
-    elif (_sl == '2' or _sl == '3') and (_tl == '2' or _tl == '3'):
-      msg = 'You can only translate to/from Ndyuka (Aukaans)'
+    #elif (_sl == '2' or _sl == '3') and (_tl == '2' or _tl == '3'):
+    #  msg = 'You can only translate to/from Ndyuka (Aukaans)'
 
     if 'translate' in request.form:
       if msg == 'Translation successful':
-        translation = Translator(to_lang = languages.get(_tl), from_lang = languages.get(_sl)).translate(_t2t)
+        #model_path = 'apps/models/m2m100_djk_en_bigger_no_bible_es'
+        #translation = translate_text(lcode.get(_sl)[0], lcode.get(_tl)[0], _t2t, model_path)
+        translation = Translator(to_lang = lcode.get(_tl)[0], from_lang = lcode.get(_sl)[0]).translate(_t2t)
         _tt = translation
       else:
         _tt = ''
@@ -66,17 +79,42 @@ def route_default():
         translation = _tt)
 
     elif 'review' in request.form:
-      if msg == 'Translation successful':
-        translation = Translator(to_lang = languages.get(_tl), from_lang = languages.get(_sl)).translate(_t2t)
 
-        if _tt == translation:
+      _comment = request.form['revcomment']
+      _revText = request.form['revText']
+
+      if msg == 'Translation successful':
+        if _revText == _tt:
           msg = 'Please review translation before saving'
         else:
-          record = Reviews(lcode.get(_sl), lcode.get(_tl), _t2t, translation, _tt, datetime.now())
+          record = Reviews(lcode.get(_sl)[1], lcode.get(_tl)[1], _t2t, _tt, _revText, _comment, datetime.now())
           db.session.add(record)
           db.session.commit()
 
           msg = 'Review successful'
+
+      else:
+        msg = 'Generate a translation first'
+
+      return render_template('home/translate.html',
+        t2t = _t2t,
+        sl = _sl,
+        tl = _tl,
+        msg = msg,
+        translation = _tt)
+
+    elif 'accept' in request.form:
+
+      _comment = request.form['acceptcomment']
+
+      if msg == 'Translation successful':
+        translation = Translator(to_lang = lcode.get(_tl)[0], from_lang = lcode.get(_sl)[0]).translate(_t2t)
+
+        record = Reviews(lcode.get(_sl)[1], lcode.get(_tl)[1], _t2t, translation, _tt, _comment, datetime.now())
+        db.session.add(record)
+        db.session.commit()
+
+        msg = 'Translation saved'
 
       else:
         msg = 'Generate a translation first'
