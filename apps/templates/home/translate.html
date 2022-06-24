@@ -198,71 +198,50 @@
          </a>
        </div>
        <div class="modal-body">
-         <table class="table responsive">
-           <tbody>
-             <tr>
-               <td class="col-md-1">
-                 <span class="fw-bold">
-                   Direction:
-                 </span>
-               </td>
-               <td class="col-md-10 col-sm-10 col-xs-10">
-                 <span id="direction" class="fw-normal"></span>
-               </td>
-             </tr>
-             <tr>
-               <td>
-                 <span class="fw-bold">
-                   Text:
-                 </span>
-               </td>
-               <td>
-                 <span id="srcText" class="fw-normal"></span>
-               </td>
-             </tr>
-             <tr>
-               <td>
-                 <span class="fw-bold">
-                   Translation:
-                 </span>
-               </td>
-               <td>
-                 <span id="tText" class="fw-normal"></span>
-               </td>
-             </tr>
-             <tr>
-               <td>
-                 <span class="fw-bold">
-                   Review:
-                 </span>
-               </td>
-               <td>
-                <textarea class="form-control mb-2" id="revText" name="revText" rows="4"></textarea>
-                <div class="mb-0">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="leaveComment" name="leaveComment" value="yes">
-                    <label class="form-check-label" for="leaveComment">Leave a comment (optional)</label>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr class="commentText" style="display: none;">
-              <td>
-                Comment:
-              </td>
-              <td>    
-                <textarea class="form-control mb-0" id="revcomment" name="revcomment" rows="4"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <button type="submit" id="review" name="review" value="review" class="btn btn-primary float-end">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 27 27" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Review
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+          Direction:
+        </div>
+        <div class="col-md-10 col-sm-10 col-xs-10">
+          <span id="direction" class="fw-normal"></span>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+          Text:
+        </div>
+        <div class="col-md-10 col-sm-10 col-xs-10">
+          <span id="srcText" class="fw-normal"></span>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+          Translation:
+        </div>
+        <div class="col-md-10 col-sm-10 col-xs-10">
+          <span id="tText" class="fw-normal"></span>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+          Review:
+        </div>
+        <div class="col-md-10 col-sm-10 col-xs-10">
+          <textarea class="form-control mb-2" id="revText" name="revText" rows="4"></textarea>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1"></div>
+        <div class="col-md-10 col-sm-10 col-xs-10">
+          <div class="mb-0">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="leaveComment" name="leaveComment" value="yes">
+              <label class="form-check-label" for="leaveComment">Leave a comment (optional)</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1 commentText" style="display: none;">
+          Comment:
+        </div>
+        <div class="col-md-10 col-sm-10 col-xs-10 commentText" style="display: none;">
+          <textarea class="form-control mb-0" id="revcomment" name="revcomment" rows="4"></textarea>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <button type="submit" id="review" name="review" value="review" class="btn btn-primary float-end">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 27 27" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>Review
+          </button>
+        </div>
       </div>
     </div>
 
