@@ -67,7 +67,10 @@ def route_template(template):
       total = len(records)
 
       if end > total:
-          end = total
+        end = total
+
+      if start > total:
+        start = total
 
       display_msg = 'Showing ' + str(start) + ' - ' + str(end) + ' of ' + str(total) + ' Records'
 
@@ -80,6 +83,8 @@ def route_template(template):
   except TemplateNotFound:
     return render_template('home/page-404.html'), 404
 
+  except:
+    return render_template('home/page-500.html'), 500
 
 # Helper - Extract current page name from request
 def get_segment(request):
