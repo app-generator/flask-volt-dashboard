@@ -134,9 +134,14 @@ def getLangPair():
   return _slang, _tlang
 
 def getDateRange():
-  
-  _start_date = datetime.strptime(request.form['startdate'], "%m/%d/%Y").strftime("%Y-%m-%d")
-  _end_date = datetime.strptime(request.form['enddate'], "%m/%d/%Y").strftime("%Y-%m-%d")
+   
+  try:
+    _start_date = datetime.strptime(request.form['startdate'], "%m/%d/%Y").strftime("%Y-%m-%d")
+    _end_date = datetime.strptime(request.form['enddate'], "%m/%d/%Y").strftime("%Y-%m-%d")
+
+  except:
+    _start_date = ''
+    _end_date = ''
 
   return _start_date, _end_date
 
