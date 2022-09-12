@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.8] 2022-09-07
+### Improvements
+
+- Added OAuth via Github
+- Improved Auth Pages
+
 ## [1.0.7] 2022-05-25
 ### Improvements
 
