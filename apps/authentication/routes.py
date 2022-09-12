@@ -10,6 +10,8 @@ from flask_login import (
     logout_user
 )
 
+from flask_dance.contrib.github import github
+
 from apps import db, login_manager
 from apps.authentication import blueprint
 from apps.authentication.forms import LoginForm, CreateAccountForm
@@ -17,13 +19,20 @@ from apps.authentication.models import Users
 
 from apps.authentication.util import verify_pass
 
-
 @blueprint.route('/')
 def route_default():
     return redirect(url_for('authentication_blueprint.login'))
 
-
 # Login & Registration
+
+@blueprint.route("/github")
+def login_github():
+    """ Github login """
+    if not github.authorized:
+        return redirect(url_for("github.login"))
+
+    res = github.get("/user")
+    return redirect(url_for('home_blueprint.index'))
 
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login():
@@ -84,7 +93,7 @@ def register():
         db.session.commit()
 
         return render_template('accounts/register.html',
-                               msg='User created please <a href="/login">login</a>',
+                               msg='Account created successfully.',
                                success=True,
                                form=create_account_form)
 
