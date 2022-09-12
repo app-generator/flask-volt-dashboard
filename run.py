@@ -29,7 +29,6 @@ Migrate(app, db)
 
 if DEBUG:
     app.logger.info('DEBUG       = ' + str(DEBUG)             )
-    app.logger.info('FLASK_ENV   = ' + os.getenv('FLASK_ENV') )
     app.logger.info('DBMS        = ' + app_config.SQLALCHEMY_DATABASE_URI)
     app.logger.info('ASSETS_ROOT = ' + app_config.ASSETS_ROOT )
 
