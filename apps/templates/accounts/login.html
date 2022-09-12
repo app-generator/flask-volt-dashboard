@@ -23,7 +23,7 @@
                                 <br />
                                 <p>
                                     {% if msg %}
-                                        {{ msg | safe }}
+                                        <span class="text-danger">{{ msg | safe }}</span>
                                     {% else %}
                                         Add your credentials
                                     {% endif %}                                     

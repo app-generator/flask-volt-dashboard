@@ -92,6 +92,9 @@ def register():
         db.session.add(user)
         db.session.commit()
 
+        # Delete user from session
+        logout_user()
+        
         return render_template('accounts/register.html',
                                msg='Account created successfully.',
                                success=True,
