@@ -48,11 +48,11 @@
 <meta property="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-bootstrap-5-dashboard/volt-pro-preview.jpg">
 
 <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="120x120" href="/static/assets/img/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon/favicon-16x16.png">
-<link rel="manifest" href="/static/assets/img/favicon/site.webmanifest">
-<link rel="mask-icon" href="/static/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ config.ASSETS_ROOT }}/img/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ config.ASSETS_ROOT }}/img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ config.ASSETS_ROOT }}/img/favicon/favicon-16x16.png">
+<link rel="manifest" href="{{ config.ASSETS_ROOT }}/img/favicon/site.webmanifest">
+<link rel="mask-icon" href="{{ config.ASSETS_ROOT }}/img/favicon/safari-pinned-tab.svg" color="#ffffff">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 
@@ -61,13 +61,13 @@
       integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- Sweet Alert -->
-<link type="text/css" href="/static/assets/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+<link type="text/css" href="{{ config.ASSETS_ROOT }}/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
 
 <!-- Notyf -->
-<link type="text/css" href="/static/assets/vendor/notyf/notyf.min.css" rel="stylesheet">
+<link type="text/css" href="{{ config.ASSETS_ROOT }}/vendor/notyf/notyf.min.css" rel="stylesheet">
 
 <!-- Volt CSS -->
-<link type="text/css" href="/static/assets/css/volt.css" rel="stylesheet">
+<link type="text/css" href="{{ config.ASSETS_ROOT }}/css/volt.css" rel="stylesheet">
 
 <!-- Specific Page JS goes HERE  -->    
 {% block stylesheets %}{% endblock stylesheets %}
