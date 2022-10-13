@@ -56,7 +56,7 @@ https://user-images.githubusercontent.com/51070104/195502745-2cfb4eff-7434-424f-
 
 <br />
 
-## ✨ Create a new `.env` file using sample `env.sample`
+### ✨ Create a new `.env` file using sample `env.sample`
 
 The meaning of each variable can be found below: 
 
@@ -71,8 +71,6 @@ The meaning of each variable can be found below:
 <br />
 
 ## ✨ Manual Build
-
-> Download the code 
 
 > Download the code 
 
