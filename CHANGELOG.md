@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.0.10] 2022-12-31
+### Changes
+
+- Deployment-ready for Render (CI/CD)
+  - `render.yaml`
+  - `build.sh`
+
 ## [1.0.9] 2022-12-31
 ### Changes
 
