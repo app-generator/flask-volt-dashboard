@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.11] 2022-12-31
+### Changes
+
+- Added page compression for PRODUCTION env
+  - `DEBUG=False`
+
 ## [1.0.10] 2022-12-31
 ### Changes
 
