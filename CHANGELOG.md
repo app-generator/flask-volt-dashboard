@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.9] 2022-12-31
+### Changes
+
+- `DB Management` Improvement
+  - `Silent fallback` to **SQLite**
+
 ## [1.0.8] 2022-09-07
 ### Improvements
 

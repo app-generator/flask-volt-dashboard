@@ -16,3 +16,4 @@ blinker==1.4
 pyOpenSSL
 
 # flask_mysqldb
+# psycopg2-binary
