@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.0.12] 2023-03-15
+### Changes
+
+- DOCS Update
+  - [Volt Dashboard Flask](https://docs.appseed.us/products/flask-dashboards/volt/) - `official help` 
+- Links Curation (minor)
+
 ## [1.0.11] 2022-12-31
 ### Changes
 
