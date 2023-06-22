@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.0.13] 2023-06-22
+### Changes
+
+- Print UserID on `index`
+  - Via export in controller
+  - Via `current_user` in view
+
 ## [1.0.12] 2023-03-15
 ### Changes
 
