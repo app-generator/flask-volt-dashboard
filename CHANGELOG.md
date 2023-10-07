@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.0.14] 2023-10-07
+### Changes
+
+- Update Dependencies
+- Silent fallback to SQLite
+
 ## [1.0.13] 2023-06-22
 ### Changes
 

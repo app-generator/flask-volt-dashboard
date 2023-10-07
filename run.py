@@ -30,7 +30,7 @@ Migrate(app, db)
 
 if not DEBUG:
     Minify(app=app, html=True, js=False, cssless=False)
-
+    
 if DEBUG:
     app.logger.info('DEBUG            = ' + str(DEBUG)             )
     app.logger.info('Page Compression = ' + 'FALSE' if DEBUG else 'TRUE' )

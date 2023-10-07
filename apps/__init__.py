@@ -3,8 +3,6 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-import os
-
 from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
@@ -53,9 +51,9 @@ def create_app(config):
     app = Flask(__name__)
     app.config.from_object(config)
     register_extensions(app)
-    register_blueprints(app)
 
-    app.register_blueprint(github_blueprint, url_prefix="/login") 
+    app.register_blueprint(github_blueprint, url_prefix="/login")
     
+    register_blueprints(app)
     configure_database(app)
     return app
