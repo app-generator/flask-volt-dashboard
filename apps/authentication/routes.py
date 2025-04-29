@@ -11,12 +11,13 @@ from flask_login import (
 )
 
 from flask_dance.contrib.github import github
+from flask_dance.contrib.google import google
 
 from apps import db, login_manager
 from apps.authentication import blueprint
 from apps.authentication.forms import LoginForm, CreateAccountForm
 from apps.authentication.models import Users
-
+from apps.config import Config
 from apps.authentication.util import verify_pass
 
 @blueprint.route('/')
@@ -33,6 +34,17 @@ def login_github():
 
     res = github.get("/user")
     return redirect(url_for('home_blueprint.index'))
+
+
+@blueprint.route("/google")
+def login_google():
+    """ Google login """
+    if not google.authorized:
+        return redirect(url_for("google.login"))
+
+    res = google.get("/oauth2/v1/userinfo")
+    return redirect(url_for('home_blueprint.index'))
+
 
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login():
@@ -130,3 +142,12 @@ def not_found_error(error):
 @blueprint.errorhandler(500)
 def internal_error(error):
     return render_template('home/page-500.html'), 500
+
+
+@blueprint.context_processor
+def has_github():
+    return {'has_github': bool(Config.GITHUB_ID) and bool(Config.GITHUB_SECRET)}
+
+@blueprint.context_processor
+def has_google():
+    return {'has_google': bool(Config.GOOGLE_ID) and bool(Config.GOOGLE_SECRET)}
